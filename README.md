@@ -78,3 +78,17 @@ Type de Ressource= Application Pgadmin
 
 Rôle= administrer de façon graphique la base de données PostgreSQL
 
+
+
+b. Deployment of the Odoo application
+	- Create folders for data on the host:
+	`mkdir /data/odoo`
+	`mkdir /data/postgres`
+      - Apply deployment and service of postres: `kubectl apply -f postgres.yml`
+      - Apply  deployment and service of odoo: `kubectl apply -f odoo.yml`
+
+![](https://lh3.googleusercontent.com/zHvj6L_1vPVd2kU7Ey-Os4akWGgNQ0ZYQ6GZqXuxNiZnfUrqfO_IpLz71XQctyKi1CiNBZ3TnvKGb4SJHINkclDTfv1SYLxHLxPjh1zDt4dLIj5EePcKimRtbfHNzyWqix9xCa-3JE8ubvSSsnK-KMbHVFhPPBsjrRuTlEMUzznq5R-Cx54JGCGXdA)
+Verification:
+
+![](https://lh5.googleusercontent.com/kiBzVC_upaAMqcMVZtHuXUAQll6Uu1WHYJvZK0GqmBKaPX4H0km7j0OhjKiZGEBmZYKtK82djVx4-4B-U-BrgYMeoHIAmiN7s8CgVYIlev11zZMHtym7t6ZxOGI2Du1xpO8MuxYDuOIaMPFdfYqmr3L1ifIRMxXUhgwLSFNi0N0IYTMJHAee2S4U8w)
+

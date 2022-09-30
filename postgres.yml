@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-odoo
+  labels:
+    app: odoo
+    tier: backend
+spec:
+  selector:
+    matchLabels:
+      app: odoo
+      tier: backend
+  strategy:
+     type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: odoo
+        tier: backend
+    spec:
+      containers:
+      - image: postgres:13
+        name: postgres
+        env:
+        - name: POSTGRES_DB
+          value: postgres
+        - name: POSTGRES_USER
+          value: aurelie
+        - name: POSTGRES_PASSWORD
+          value: postgres
+        - name: PGDATA
+          value: /var/lib/postgresql/data/pgdata
+        volumeMounts:
+        - name: postgres-storage
+          mountPath: /var/lib/postgresql/data/pgdata
+        ports:
+        - containerPort: 5432
+          name: postgres
+      volumes:
+      - name: postgres-storage
+
+        hostPath:
+        # chemin du dossier sur l'hôte
+          path: /data/postgres
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-odoo
+  labels:
+    app: odoo
+    tier: backend
+spec:
+  type: ClusterIP
+  ports:
+    - port: 5432
+      targetPort: 5432
+  selector:
+    app: odoo
+    tier: backend
+

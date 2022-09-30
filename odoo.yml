@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: odoo
+  labels:
+    app: odoo
+    tier: frontend
+spec:
+  selector:
+    matchLabels:
+      app: odoo
+      tier: frontend
+  strategy:
+     type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: odoo
+        tier: frontend
+    spec:
+      containers:
+      - image: odoo:13.0
+        name: odoo
+        env:
+        - name: HOST
+          value: postgres #service mysql
+        - name: USER
+          value: aurelie
+        - name: PASSWORD
+          value: postgres
+        volumeMounts:
+        - name: odoo-storage
+          mountPath: /var/lib/odoo
+        ports:
+        - containerPort: 8069
+          name: odoo
+
+      volumes:
+      - name: odoo-storage
+        hostPath:
+          # chemin du dossier sur l'hôte
+          path: /data/odoo
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+ name: odoo
+ labels:
+    app: odoo
+    tier: frontend
+spec:
+  type: NodePort
+   ports:
+    - port: 8069
+      targetPort: 8069
+      nodePort: 30080
+  selector:
+    app: odoo
+    tier: frontend
+

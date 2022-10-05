@@ -94,6 +94,3 @@ Verification:
 
 ![](https://lh5.googleusercontent.com/kiBzVC_upaAMqcMVZtHuXUAQll6Uu1WHYJvZK0GqmBKaPX4H0km7j0OhjKiZGEBmZYKtK82djVx4-4B-U-BrgYMeoHIAmiN7s8CgVYIlev11zZMHtym7t6ZxOGI2Du1xpO8MuxYDuOIaMPFdfYqmr3L1ifIRMxXUhgwLSFNi0N0IYTMJHAee2S4U8w)
 
-
-![](https://lh4.googleusercontent.com/uCKOUvVCrIgGchxX5LxiuH5LY1yxagsJNOpfoKMvtL4juma2cRTa7VKKfWcXaH8zCzb5-Xx5dPCsXaZWJxtLo8oeVaWgWTKeszB-bgQnexNdXWOC2ZRIcjJbhWrI_ph5f7A_qJmJdl5poJXpTWmI6lXP_3yW-Y2e2HHalxgfws15-3QofXBGFJ33xg)
-

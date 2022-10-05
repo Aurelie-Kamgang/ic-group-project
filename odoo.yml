@@ -23,23 +23,33 @@ spec:
         name: odoo
         env:
         - name: HOST
-          value: postgres #service mysql
+          value: postgres-odoo #service mysql
         - name: USER
           value: aurelie
         - name: PASSWORD
           value: postgres
         volumeMounts:
-        - name: odoo-storage
+        - name: odoo-web-data
           mountPath: /var/lib/odoo
+        - name: odoo-config-storage
+          mountPath: /etc/odoo
+        - name: extra-addons-storage
+          mountPath: /mnt/extra-addons
         ports:
         - containerPort: 8069
           name: odoo
-
       volumes:
-      - name: odoo-storage
+      - name: odoo-web-data
         hostPath:
-          # chemin du dossier sur l'hôte
+        # chemin du dossier sur l'hôte
           path: /data/odoo
+      - name: extra-addons-storage
+        hostPath:
+          path: /data/addons
+      - name: odoo-config-storage
+        hostPath:
+          path: /data/config
+   
 
 ---
 
@@ -52,10 +62,11 @@ metadata:
     tier: frontend
 spec:
   type: NodePort
-   ports:
-    - port: 8069
-      targetPort: 8069
-      nodePort: 30080
+  ports:
+  - protocol: TCP
+    port: 8069
+    targetPort: 8069
+    nodePort: 30080
   selector:
     app: odoo
     tier: frontend

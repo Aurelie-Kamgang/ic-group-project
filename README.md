@@ -1,5 +1,5 @@
-# DEVOPS
-### Conteneurisation de l’application web.
+# Ic Group Project
+### Containerisation of the web application.
 1. Clone the repos
 `git clone [https://github.com/sadofrazer/ic-webapp.git](https://github.com/sadofrazer/ic-webapp.git)`
 
@@ -32,51 +32,49 @@ a. Architecture:
 ![](https://lh3.googleusercontent.com/Vf-PRFcXNR9PJ_dul0yod3uql2U538NXUaVAX3fzP-PL9MLkdMkW10PWvNoD_pd7EhGBCieVRH_Vr9nDP8HWa-K_KOKl71bTb3DQ6pH_vvyBad0Eq9mONEINlhTKYftYgsp5sgQJ-BK-LkxeDHHaPwIjf312elCyAnWcY5F5OHB-J6UsJzbTRl-TzQ)
 A
 
-Type de Ressource= Service ic-webapp (frontend)
+Type of Ressource= Service ic-webapp (frontend)
 
-Rôle= accès à l’application web ic-webapp
+Role= exposes the web application ic-webapp
 
 B
 
-Type de Ressource= application ic-webapp
+Type of Ressource= ic-webapp application 
 
-Rôle= conteneurisé l’application odoo et pgadmin
+Role= containerised the odoo application and pgadmin
 
 C
 
-Type de Ressource= Service web Odoo
+Type of Ressource=  Odoo Web Service
 
-Rôle= accès au site web d’Odoo
+Role= exposes the Odoo website
 
 D
 
-Type de Ressource= Application Odoo
+Type of Ressource=  Odoo Application
 
-Rôle= ERP multi usage qui permet de gérer les ventes, les achats, la comptabilité, l’inventaire, le personnel …
+Role= Multi-purpose ERP that manages sales, purchasing, accounting, inventory, personnel …
 
 E
 
-Type de Ressource= Service BDD_Odoo
+Type of Ressource=  BDD_Odoo Service
 
-Rôle= accès à l’application BDD_Odoo
+Role= exposes the BDD_Odoo application
 
 F
 
-Type de Ressource= application de la base de donnée d’odoo (backend)
-
-Rôle= stocker les données de l’application Odoo à travers l’interface graphique de Pgadmin
-
+Type of Ressource= odoo database application (backend)
+Rfle= store data from the Odoo application through the Pgadmin GUI
 G
 
-Type de Ressource= Service Pgadmin
+Type of Ressource= Pgadmin Service 
 
-Rôle= accès à l’application Pgadmin
+Role= exposes the Pgadmin application
 
 H
 
-Type de Ressource= Application Pgadmin
+Type of Ressource=  Pgadmin Application
 
-Rôle= administrer de façon graphique la base de données PostgreSQL
+Role= Graphical administration of the PostgreSQL database
 
 
 

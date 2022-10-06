@@ -19,6 +19,8 @@
 	`docker tag ic-webapp:v1.0 blondel/ic-webapp:v1.0`
 
 ![](https://lh5.googleusercontent.com/JXKaelTQQAxPX_M0VRSYxFTHiSE1ryqzBVPiLStiHxxF6oF-d6gbUGNT_aS2DAfan-vtYySEwrRf0M6IRUqUN_nX3uzh6FZNtFT__i1AoWt29FO0sdXIE2YxJMiOP488agGKayNoLZ-SIsLwIe6B4kZffwQZLj7nE376IH0vEF-AlHqGzWNjs1qbHQ)
+
+
 	- Push the image:
 	`docker push blondel/ic-webapp:v1.0`
 

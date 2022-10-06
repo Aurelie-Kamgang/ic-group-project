@@ -79,16 +79,18 @@ Role= Graphical administration of the PostgreSQL database
 
 
 b. Deployment of the Odoo application
-	- Create folders for data on the host:
-	`mkdir /data/odoo`
-	`mkdir /data/postgres`
-      - Apply deployment and service of postres: `kubectl apply -f postgres.yml`
-      - Apply  deployment and service of odoo: `kubectl apply -f odoo.yml`
 
-![](https://lh3.googleusercontent.com/zHvj6L_1vPVd2kU7Ey-Os4akWGgNQ0ZYQ6GZqXuxNiZnfUrqfO_IpLz71XQctyKi1CiNBZ3TnvKGb4SJHINkclDTfv1SYLxHLxPjh1zDt4dLIj5EePcKimRtbfHNzyWqix9xCa-3JE8ubvSSsnK-KMbHVFhPPBsjrRuTlEMUzznq5R-Cx54JGCGXdA)
+Deploy the ic-webapp showcase application:
+- `kubectl apply -f ic-webapp`
+- `kubectl apply -f postgres`
+- `kubectl apply -f odoo`
+- `kubectl apply -f pg-admin`
 
+**![](https://lh4.googleusercontent.com/w2Nee8U2H5kQlE2CwACaqWX9g1-svvQmZ4TsjyMgitB1XMU9jksGP3t9xgg20OmcWsSRyZXy4QDJvgqtbzIqOSNF2olZq2-oO5ET0YAt9hMFve-6MzM6zDp2Iy4jwiQ9Qe1v3pP3SnBIqpdg8AC_NnmJd3UFHy4_Z53JqzgOl4gQpOt4nkZ3qfjW-g)**
 
-Verification:
+NB: Check that the directory where the data and configuration files are stored has the correct rights
 
-![](https://lh5.googleusercontent.com/kiBzVC_upaAMqcMVZtHuXUAQll6Uu1WHYJvZK0GqmBKaPX4H0km7j0OhjKiZGEBmZYKtK82djVx4-4B-U-BrgYMeoHIAmiN7s8CgVYIlev11zZMHtym7t6ZxOGI2Du1xpO8MuxYDuOIaMPFdfYqmr3L1ifIRMxXUhgwLSFNi0N0IYTMJHAee2S4U8w)
+- check if the deployment was successful: `kubectl get all -o wide -n ic-webapp`
+
+**![](https://lh5.googleusercontent.com/pVV093ZChDzzXiELsizHkMcK7sAioRtvRusiMf3PkmpVoMgl0szFETwf3O6ENlVZc_3UTuZIp0GO3xnYxyw_guWyvTdNIVID7f94zyXrBdXVOQqMIsrBu8SLaX5NZBIZVPMt_kxDPMxPpPKUjeUdAdJUlpj5GzHNr2TyGO97sLNSWt3npxEnPRgunQ)**
 

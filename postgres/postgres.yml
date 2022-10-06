@@ -5,6 +5,8 @@ metadata:
   labels:
     app: odoo
     tier: backend
+    env: prod
+  namespace: ic-webapp
 spec:
   selector:
     matchLabels:
@@ -51,6 +53,8 @@ metadata:
   labels:
     app: odoo
     tier: backend
+    env: prod
+  namespace: ic-webapp 
 spec:
   type: ClusterIP
   ports:

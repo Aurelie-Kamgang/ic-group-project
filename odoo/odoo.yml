@@ -5,6 +5,8 @@ metadata:
   labels:
     app: odoo
     tier: frontend
+    env: prod
+  namespace: ic-webapp
 spec:
   selector:
     matchLabels:
@@ -27,7 +29,10 @@ spec:
         - name: USER
           value: aurelie
         - name: PASSWORD
-          value: postgres
+          valueFrom:
+            secretKeyRef:
+              name: odoo
+              key: PASSWORD 
         volumeMounts:
         - name: odoo-web-data
           mountPath: /var/lib/odoo
@@ -40,10 +45,9 @@ spec:
           name: odoo
       volumes:
       - name: odoo-web-data
-        hostPath:
-        # chemin du dossier sur l'hôte
-          path: /data/odoo
-      - name: extra-addons-storage
+        persistentVolumeClaim:
+          claimName: odoo-pvc
+            - name: extra-addons-storage
         hostPath:
           path: /data/addons
       - name: odoo-config-storage
@@ -60,6 +64,8 @@ metadata:
  labels:
     app: odoo
     tier: frontend
+    env: prod
+ namespace: ic-webapp
 spec:
   type: NodePort
   ports:

@@ -94,3 +94,18 @@ NB: Check that the directory where the data and configuration files are stored h
 
 **![](https://lh5.googleusercontent.com/pVV093ZChDzzXiELsizHkMcK7sAioRtvRusiMf3PkmpVoMgl0szFETwf3O6ENlVZc_3UTuZIp0GO3xnYxyw_guWyvTdNIVID7f94zyXrBdXVOQqMIsrBu8SLaX5NZBIZVPMt_kxDPMxPpPKUjeUdAdJUlpj5GzHNr2TyGO97sLNSWt3npxEnPRgunQ)**
 
+- Verify the services:
+
+**![](https://lh6.googleusercontent.com/rS_O1l0wWm_6XTXFcRbZU8BxjxExnGGt2dOBBrNqzvm9YaH1c91hMqduiRsW6fA4taS8CCAnYCK-b1scFZg52pUU6jwCDyD6Jo0s7JZrUg-nZTB9tAvuF2Pl0L54BKRgF2U5syxA3RPx2DPJ6mOxP6DZXL06CZpXLEPIkH03R2XxnADdmMA7z479rA)**
+
+**![](https://lh4.googleusercontent.com/VDiIssH0INinTrAldOJyo9KFHccihco9X3Rg27lbX1bFZHYNXEwWN1n5RXB91TGe1d9YQEsXFAbLGfbWn6mnx1nP5QDBaEzkPFg9tx2JQV2LjoKQM5m277hXtECF4aJ_6pdmL6U5aFSMkzGBmcbtwVCU9oYkwNCf5iaHZvL1_erQpayqe-uIlLroGA)**
+
+**![](https://lh6.googleusercontent.com/4OshYXYbrrg-3CLn3PUqOgDuQpD8fBF2WDjLo1cuS1gZmjl-vsd62MpXUlzpu3Ph2dc-La85-WTFCjfX_juN6A36zLLOMS-iQgpPM5avVAdKYsXXqcBHj5ABC7v7ChON9kJnaKvanpeqGVMWEtmDFavNW439L5_XWJEfw4xediuRYSuf7HqFF3_dVw)**
+
+- Access to app in the browser:
+
+**![](https://lh4.googleusercontent.com/Pv2Xbw6EtC6PendAhRGeYhMcUh6oQQVCoCkx88hPFTGxHP36vKoFeQ1baNsF8F0hI6wGA6GXRrwQRUZtcxNCt4dJWX4HpL3S1M2PoGVWhtKsE7DnKdbXLnrR_f7ldAU3grhflfUTdpTw-wQASbz_dmotJAeCnK-3mUEHRiEf1A0BOxsioiCjQdscng)**
+
+**![](https://lh4.googleusercontent.com/mrXfrxlTJka1cA2wFGZUIGpFoImw97_7GRYDtjE-ohUDr4HRwYYX9makBIW8_fLXmZw7u9EOyBK47FRRZkyV_bUq79XMo15Ml15xrvM_1Lgm172KAfEFaflXpsz9-VwrgWYQ9WlKnXviaz2eQF3ppsacUgFngIbVgSYpXU4U0scHTyRB1lyj80thZA)**
+
+**![](https://lh3.googleusercontent.com/rb0oqsiPZMFTsBjU7803-4FL5aGCm7sV7BHFDv-Tqee-1OHmQVZ4vkbg0l6oclrE5FU465283Jgg2Q6ZYan3AI0t5-JlRV-Yckz3W1TEtXwaGN1oOFx_XQE4ZB4FyLkktVhkYNXwdYvNlipsnf27qlHrHZD_BrwsZQnpG_zFPss8EV2iFZiQmKLjww)**

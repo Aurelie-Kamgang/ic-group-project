@@ -18,11 +18,11 @@ spec:
         app: ic-webapp
     spec:
       containers:
-      - image: choco1992/ic-webapp:v1.0
+      - image: blondel/ic-webapp:v1.0
         name: ic-webapp
         env:
         - name: ODOO_URL
-          value: http://10.0.2.3:30080/
+          value: http://10.0.2.3:30008/
         - name: PGADMIN_URL
           value: http://10.0.2.3:30006/
         ports:

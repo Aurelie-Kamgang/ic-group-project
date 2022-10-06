@@ -47,7 +47,7 @@ spec:
       - name: odoo-web-data
         persistentVolumeClaim:
           claimName: odoo-pvc
-            - name: extra-addons-storage
+      - name: extra-addons-storage
         hostPath:
           path: /data/addons
       - name: odoo-config-storage
@@ -72,7 +72,7 @@ spec:
   - protocol: TCP
     port: 8069
     targetPort: 8069
-    nodePort: 30080
+    nodePort: 30008
   selector:
     app: odoo
     tier: frontend

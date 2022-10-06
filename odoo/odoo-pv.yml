@@ -13,4 +13,4 @@ spec:
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: "/data/lib-odoo"
+    path: /data/lib-odoo

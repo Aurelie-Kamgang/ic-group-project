@@ -1,113 +1,71 @@
-# Ic Group Project
-### Containerisation of the web application.
-1. Clone the repos
-`git clone [https://github.com/sadofrazer/ic-webapp.git](https://github.com/sadofrazer/ic-webapp.git)`
 
-2. Build the image:
-`docker buitd -t ic-webapp:v1.0 .`
+## Steps to follow
+This short tutorial explains step by step how to implement the red thread project
 
-![](https://lh5.googleusercontent.com/hg5Pmt82WY8TAUZpdBIo9rsjSscTYT1oV4O0sAp5ZXGfsw0pW5puMOS1EoAw7TPoZckyiJf70uO4-fA5qMvGmLBxMsjQV2tWVqVA7dhSTDR_MnIu4yenW8PgL2Ir46EuUwZG-Pw4CzgJqh8r1EhXRGKj1ABfjq0idhr-FlDtkIclVpzQ-YCoPtYcMw)
+## Prerequisites
 
-![](https://lh3.googleusercontent.com/nigJ3Bs2Hth7dBNcuV1YpOVZjCCyfxF6T-aSRbXrlBbNq6hl0WyFTVLiPYGEhY0Lto2dhBcbF2l0aujuALBiKG9F6zyydRNdg6cwMW2LHMwxFmTpZ_5f8uN8JV6MJo1krJqactn3WmQpsD-QXOjiqp13nlKOAv64TgsG6B9d3R78y2aRrT4MSWPHzw)
-3. launch a test container allowing to go on the official websites of each of applications:
-
-![](https://lh6.googleusercontent.com/aZRdQhThLr_jCPJOqsdtYRCgBCGf1lrr7es-4PjynywVATVxdouumlRsDsQ_CcFUOtvBHkgBHp1IA7WNElMczLhks181kyzLyLrB0LiOGf7NO5V9N20gm-bhlI4Ms7qyqyWCcqmAix7BwUNgfSvVrv3B7azr2mvL57lwUPhiY8nOdLmcbaTivHokbg)
-
-![](https://lh6.googleusercontent.com/Dfxl4FFxHCVyjVZVeTpbSI1Z01d7JIEDST5_auzRKHJ3nCfN78vWcL3-fnfaVTRTMliJcOmW-bMpvYkep-t2ro5CRsZiW7hr_3Jp7ryfKD-UeYFhg4NnJ24AFtak25svcObwJMEL39oegjawF1r_YzJ-YdP698j1J4Pjz6SCHkys6yOdPcxBRi38dg)
-4. push image to  Docker hub registry:
-	- Tag the image:
-	`docker tag ic-webapp:v1.0 blondel/ic-webapp:v1.0`
-
-![](https://lh5.googleusercontent.com/JXKaelTQQAxPX_M0VRSYxFTHiSE1ryqzBVPiLStiHxxF6oF-d6gbUGNT_aS2DAfan-vtYySEwrRf0M6IRUqUN_nX3uzh6FZNtFT__i1AoWt29FO0sdXIE2YxJMiOP488agGKayNoLZ-SIsLwIe6B4kZffwQZLj7nE376IH0vEF-AlHqGzWNjs1qbHQ)
+- Have **docker**,*docker-compose*, **k8s** and **Jenkins** on your workstation to provision the lab locally
 
 
-	- Push the image:
-	`docker push blondel/ic-webapp:v1.0`
+### Build, test (**docker**) and deploy the application (**kubernetes**)
 
-![](https://lh4.googleusercontent.com/nI-WeW0gFJaqHCRy0n6J9BcnG6N7w9G8I_ZiBaHxbWBj0TmQtJ0414PtArkopx5-sDb7fD0r8KSfo4MSk1NN-6aHVIeeIU49N8uvBqatT9_SNJMoW6iXYRTCdme8R4CVcZOSxu-FesNbqi_JbERmPjoxNs3miM14EaHI0wqMB22RaMH5SDKxBAvo7Q)
-![](https://lh3.googleusercontent.com/m_cUiWVEhpJ2N5IwjnSQgm1D7TJ8wmGJEsz3ZjXoEmSvl1Fs2lnEWW7vyUDm66pLs3rQUXIrwn7kcgYjPt_B52rLOmoewRHsOUNFqOtZjYss80on0N3gwzj86Ko969pXTACe-cYQqUB2lGPYXGQb04MTHDBG_kAGOs7lqVD7pzoirMdIVJmtGZP3Rg)
+### Build, test and push the Docker image
 
-### Part 1: Deploying different applications in a Kubernetes cluster.
+- To see the procedure to deploy the application using kubernetes go to the readme of the Manifests_k8s folder 
 
-a. Architecture:
- type and role of each resource (A...H) mentioned in this architecture.
-![](https://lh3.googleusercontent.com/Vf-PRFcXNR9PJ_dul0yod3uql2U538NXUaVAX3fzP-PL9MLkdMkW10PWvNoD_pd7EhGBCieVRH_Vr9nDP8HWa-K_KOKl71bTb3DQ6pH_vvyBad0Eq9mONEINlhTKYftYgsp5sgQJ-BK-LkxeDHHaPwIjf312elCyAnWcY5F5OHB-J6UsJzbTRl-TzQ)
-A
+- To see the procedure for deploying the application using docker-compose go to the readme of the docker-ressources folder
 
-Type of Ressource= Service ic-webapp (frontend)
+## CI with Jenkins
 
-Role= exposes the web application ic-webapp
+#### Launch the Jenkins
+#### Retrieve the token for the GUI and create your account
+Type the following command on the Jenkins vm
+> docker exec -it jenkins_jenkins_1 cat /var/jenkins_home/secrets/initialAdminPassword
 
-B
+Once the token is retrieved, connect to the Jenkins GUI on port 8080 and insert the token.
 
-Type of Ressource= ic-webapp application 
+#### Jenkins plugins to install
+- Docker
+- Docker Pipeline
+- docker-build-step
 
-Role= containerised the odoo application and pgadmin
-
-C
-
-Type of Ressource=  Odoo Web Service
-
-Role= exposes the Odoo website
-
-D
-
-Type of Ressource=  Odoo Application
-
-Role= Multi-purpose ERP that manages sales, purchasing, accounting, inventory, personnel …
-
-E
-
-Type of Ressource=  BDD_Odoo Service
-
-Role= exposes the BDD_Odoo application
-
-F
-
-Type of Ressource= odoo database application (backend)
-Rfle= store data from the Odoo application through the Pgadmin GUI
-G
-
-Type of Ressource= Pgadmin Service 
-
-Role= exposes the Pgadmin application
-
-H
-
-Type of Ressource=  Pgadmin Application
-
-Role= Graphical administration of the PostgreSQL database
+![](https://lh5.googleusercontent.com/g0vujbJyXRjL1jWLNdHTl8xlMpfAgEIygRu6T_pAnlohpDF90UkB0WtEYuCTx7mMMggnOsAE9g75rgQYRoh6hy8_769ZqA70YGBDdpiUaqt8bGAk8cJLkhP1uJuWbQIwXEPTb2ji0VCcB-TFvsPNLxsc9Bjb3ezWOPY1PWa_zapZFVwNnFDbgOfjOg)
 
 
 
-b. Deployment of the Odoo application
 
-Deploy the ic-webapp showcase application:
-- `kubectl apply -f ic-webapp`
-- `kubectl apply -f postgres`
-- `kubectl apply -f odoo`
-- `kubectl apply -f pg-admin`
+#### Characteristics of the Pipeline job 
+##### Secret and parameters
+|Type |Default Value |Description |
+|-------------------|------------------|-----------------|------------------------------|
+| snyk_token | secret text | N/A | snyk login token |
+| dockerhub_password | secret text | N/A | dockerhub password |
+| IMAGE_TAG | Job Parameter | v1.0 | docker image tag |
+DOCKERFILE_NAME | Job Parameter | Dockerfile_v4.0 | Dockerfile to use | HOST_IP | Dockerfile_NAME | Dockerfile_v4.0 | Dockerfile_v4.0
+| HOST_IP | Job Parameter | 127.0.0.1 | IP address of the host machine
+| APP_EXPOSED_PORT | Job parameter | 8000 | Exposed port of the app |
 
-**![](https://lh4.googleusercontent.com/w2Nee8U2H5kQlE2CwACaqWX9g1-svvQmZ4TsjyMgitB1XMU9jksGP3t9xgg20OmcWsSRyZXy4QDJvgqtbzIqOSNF2olZq2-oO5ET0YAt9hMFve-6MzM6zDp2Iy4jwiQ9Qe1v3pP3SnBIqpdg8AC_NnmJd3UFHy4_Z53JqzgOl4gQpOt4nkZ3qfjW-g)**
+**![](https://lh4.googleusercontent.com/Kv_YJ-S8RDUaTjOIJ1cVO87vTuAVLghyjD-F9HkayZMQqkO0MHgN59zicnvDfqSxnMy2FVJAJdhZAyfCkDoCvjLGAH3pqWsmph3Ml9chDqUL7QvO8di2zvA31oBBu0XVITQewh0OdzzBCtzXYJPC_jsH9J5Vebs_CTgyWo35S-QR2uYKkC-xhimqPbcRaA)**
+**![](https://lh4.googleusercontent.com/sLN_Ser1vGWtkdYpjO3JZ7S2bypk7qO3hM8VuhBZJU8A89r7YiDeakYHmDvWchwyE1kQwaI0s_aHLCtUvH0PTQT_tLhjXPHIkWxBQl9slKz8NDqDTlZ068Nk9Fnm28Iov0YpSWua-2iPqSiKjKaDtmTHZJ56oiFVVZymJGxBjTsveAabDP_sLEjDTfKsUw)**
+**![](https://lh4.googleusercontent.com/thpA_qFblD_OEkc9YuyejHJrDQ43s4d-TFT25Pz7g5FErD6uXQL4f0fCFn4rO2pmjl814EwLBLi1Pau1A7PZaWEdF6lFSBKwaKh9dl8o9AXTxHEoCMKz_hSUgB2HcL4RR5V_fRqM8auau_0_AQyuVjid_rawtdPsQJ_Kf_J0WNkLBH2Bd2tBsRgHUYNG9g)**
 
-NB: Check that the directory where the data and configuration files are stored has the correct rights
 
-- check if the deployment was successful: `kubectl get all -o wide -n ic-webapp`
+ #### Configure the system
+ - Configure docker build
+**![](https://lh5.googleusercontent.com/Irl2t-vcsHrj31LlMd3H1s2jGVgEInu23Fx9Jc0HWkr-wErRey0fQbZf-HA1j1kI6yVYt75p7_3zN8kZgBPeDr3jkE8RVwoZifOj_GsHYbf_88y01rgC0FxyDWm4DkwBB0I_cemqUoToZvPGk7tYskUSJlhTTwJshauBoZ_bCYi4Liysf8c0ZnLrC8vZRA)**
+- Configure Global librarie
+**![](https://lh4.googleusercontent.com/lf8Ssqee-S8kgr_A6b40KJvfdpV9o9O9b5ky8Y-LitVC9IiQ_Fq7k-MTMpfalUPlRGy_ZVUB_1JuJkbvuAZPJy1tmvP6BuiMA-MGJLRR0OtU8lVm9M3Mi82PHSuwkGLiXzFDK6I-zb3hoZarYxkx_ud7fxZXxrCfvrV3UvYngM2Vq0FK2RfLGP5afXOTbw)**
+- Configure Slack
+**![](https://lh3.googleusercontent.com/XGQHzBuUJqAo7KmU0VEmGQVwB403plUl0VT9ywpdLRNgZROnyzPIPnrQLl3feJEY7GioC2tajG_ph-WlNAJ05vPWH1apuqelTfR8eAcmpffd19RbHJYxQn0VqEwoTVu4Q5hqjMN7oaN24k-0r0gPWpbXti55GSvNezvWhvDg51v3TBUTjRoUKo8hw_MDtg)**
+**![](https://lh5.googleusercontent.com/NXp-YFt7Ar7tWcdlLThZc8hpWoPhvZAUWiTurunZUPqprXwOfYMF6IkSaYWjjxcO2DCJOQfmTAr3f-9J9kYZFFXbmxqHHdvhNw-MqG4FAr4CIy8FVn4Tb6lKvarbdePm88BIsuUc6R0vRogy2X7Vgi2BCZBiZHkhIc-3wCSK44fLXK4VOWCSnCdh2DMfMQ)**
 
-**![](https://lh5.googleusercontent.com/pVV093ZChDzzXiELsizHkMcK7sAioRtvRusiMf3PkmpVoMgl0szFETwf3O6ENlVZc_3UTuZIp0GO3xnYxyw_guWyvTdNIVID7f94zyXrBdXVOQqMIsrBu8SLaX5NZBIZVPMt_kxDPMxPpPKUjeUdAdJUlpj5GzHNr2TyGO97sLNSWt3npxEnPRgunQ)**
-
-- Verify the services:
-
-**![](https://lh6.googleusercontent.com/rS_O1l0wWm_6XTXFcRbZU8BxjxExnGGt2dOBBrNqzvm9YaH1c91hMqduiRsW6fA4taS8CCAnYCK-b1scFZg52pUU6jwCDyD6Jo0s7JZrUg-nZTB9tAvuF2Pl0L54BKRgF2U5syxA3RPx2DPJ6mOxP6DZXL06CZpXLEPIkH03R2XxnADdmMA7z479rA)**
-
-**![](https://lh4.googleusercontent.com/VDiIssH0INinTrAldOJyo9KFHccihco9X3Rg27lbX1bFZHYNXEwWN1n5RXB91TGe1d9YQEsXFAbLGfbWn6mnx1nP5QDBaEzkPFg9tx2JQV2LjoKQM5m277hXtECF4aJ_6pdmL6U5aFSMkzGBmcbtwVCU9oYkwNCf5iaHZvL1_erQpayqe-uIlLroGA)**
-
-**![](https://lh6.googleusercontent.com/4OshYXYbrrg-3CLn3PUqOgDuQpD8fBF2WDjLo1cuS1gZmjl-vsd62MpXUlzpu3Ph2dc-La85-WTFCjfX_juN6A36zLLOMS-iQgpPM5avVAdKYsXXqcBHj5ABC7v7ChON9kJnaKvanpeqGVMWEtmDFavNW439L5_XWJEfw4xediuRYSuf7HqFF3_dVw)**
-
-- Access to app in the browser:
-
-**![](https://lh4.googleusercontent.com/Pv2Xbw6EtC6PendAhRGeYhMcUh6oQQVCoCkx88hPFTGxHP36vKoFeQ1baNsF8F0hI6wGA6GXRrwQRUZtcxNCt4dJWX4HpL3S1M2PoGVWhtKsE7DnKdbXLnrR_f7ldAU3grhflfUTdpTw-wQASbz_dmotJAeCnK-3mUEHRiEf1A0BOxsioiCjQdscng)**
-
-**![](https://lh4.googleusercontent.com/mrXfrxlTJka1cA2wFGZUIGpFoImw97_7GRYDtjE-ohUDr4HRwYYX9makBIW8_fLXmZw7u9EOyBK47FRRZkyV_bUq79XMo15Ml15xrvM_1Lgm172KAfEFaflXpsz9-VwrgWYQ9WlKnXviaz2eQF3ppsacUgFngIbVgSYpXU4U0scHTyRB1lyj80thZA)**
-
-**![](https://lh3.googleusercontent.com/rb0oqsiPZMFTsBjU7803-4FL5aGCm7sV7BHFDv-Tqee-1OHmQVZ4vkbg0l6oclrE5FU465283Jgg2Q6ZYan3AI0t5-JlRV-Yckz3W1TEtXwaGN1oOFx_XQE4ZB4FyLkktVhkYNXwdYvNlipsnf27qlHrHZD_BrwsZQnpG_zFPss8EV2iFZiQmKLjww)**
+#### webhook (To be configured in Github)
+**![](https://lh6.googleusercontent.com/X7Pk08zmOMm-kOkQ11QTKhhprGhykg3j2HrvOQtwJDqKXS4WIPyNaiX5CcorSI0yuHteqI21wnyVQVWEsAXytwcfpgIql8CTGSYu2kt6y6T7X-p1ehCt9_OMGgywiMa85UPwS4DQRaYcJDzVpj2Wu8dwpxJ-tX-pVTv-b-pS-lkupG4jyIPAYu6AfkZ5dQ)**
+Pipelne: 
+    - Definition : Pipeline script from SCM > GIT
+        - Branch : */main
+        - Script Path : Jenkinsfile
+        
+#### Lauch the pipeline
+**![](https://lh4.googleusercontent.com/96xi-ZxPFgrTSPJcNOMFVgNx238fKf6BBjM40ttYxrJEgzce_tPfTYu2_N3fZoyUd4xz5oPbOpzq4-FEEmE8LEWXYFKk4VmX-HV0ayhcak_s6Axxqa1GMmS_yq4oqvQFaMEywh3kEDUby3Avs5avaExdhe4nZAkIaXc84PXXG9wA0yRPIvCWVdTF73xpMA)**
+**![](https://lh4.googleusercontent.com/tpMVgyinE0QRKPL9o3AjDnfTPLrwObzVMuHUDRjoOCzJElBKFNTHb_qiwiVISpvuh6-mMsqvVbYhj_PfW7vvW7nmUW4J2xNv6Pix0GHAzih4lkk8j9ESc45z7oiGjg6i4g61wVTt7IOjA5kZ_wHxCgKv0B-wam1DALQhGqCzwKuKbIjgkluUZTFTWvn1dQ)**

@@ -38,13 +38,14 @@ Once the token is retrieved, connect to the Jenkins GUI on port 8080 and insert 
 ##### Secret and parameters
 
 |Type |Default Value |Description |
+|                   |Type              |Default Value    |Description                   |
 |-------------------|------------------|-----------------|------------------------------|
-| snyk_token | secret text | N/A | snyk login token |
-| dockerhub_password | secret text | N/A | dockerhub password |
-| IMAGE_TAG | Job Parameter | v1.0 | docker image tag |
-DOCKERFILE_NAME | Job Parameter | Dockerfile_v4.0 | Dockerfile to use | HOST_IP | Dockerfile_NAME | Dockerfile_v4.0 | Dockerfile_v4.0
-| HOST_IP | Job Parameter | 127.0.0.1 | IP address of the host machine
-| APP_EXPOSED_PORT | Job parameter | 8000 | Exposed port of the app |
+|    snyk_token     | secret text      |      N/A        | token de connexion à snyk    |
+| dockerhub_password| secret text      |      N/A        | Password dockerhub           |
+|    IMAGE_TAG      | Paramètre du job |      v1.0       | tag de l'image docker        |
+|  DOCKERFILE_NAME  | Paramètre du job | Dockerfile_v1.0 | Dockerfile à utiliser        |
+|      HOST_IP      | Paramètre du job |   127.0.0.1     | adresse IP de la machine hote|
+|  APP_EXPOSED_PORT | Paramètre du job |      8000       | Port expose de l'appli       |
 
 
 **![](https://lh4.googleusercontent.com/Kv_YJ-S8RDUaTjOIJ1cVO87vTuAVLghyjD-F9HkayZMQqkO0MHgN59zicnvDfqSxnMy2FVJAJdhZAyfCkDoCvjLGAH3pqWsmph3Ml9chDqUL7QvO8di2zvA31oBBu0XVITQewh0OdzzBCtzXYJPC_jsH9J5Vebs_CTgyWo35S-QR2uYKkC-xhimqPbcRaA)**

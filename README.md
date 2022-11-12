@@ -36,6 +36,7 @@ Once the token is retrieved, connect to the Jenkins GUI on port 8080 and insert 
 
 #### Characteristics of the Pipeline job 
 ##### Secret and parameters
+
 |Type |Default Value |Description |
 |-------------------|------------------|-----------------|------------------------------|
 | snyk_token | secret text | N/A | snyk login token |
@@ -44,6 +45,7 @@ Once the token is retrieved, connect to the Jenkins GUI on port 8080 and insert 
 DOCKERFILE_NAME | Job Parameter | Dockerfile_v4.0 | Dockerfile to use | HOST_IP | Dockerfile_NAME | Dockerfile_v4.0 | Dockerfile_v4.0
 | HOST_IP | Job Parameter | 127.0.0.1 | IP address of the host machine
 | APP_EXPOSED_PORT | Job parameter | 8000 | Exposed port of the app |
+
 
 **![](https://lh4.googleusercontent.com/Kv_YJ-S8RDUaTjOIJ1cVO87vTuAVLghyjD-F9HkayZMQqkO0MHgN59zicnvDfqSxnMy2FVJAJdhZAyfCkDoCvjLGAH3pqWsmph3Ml9chDqUL7QvO8di2zvA31oBBu0XVITQewh0OdzzBCtzXYJPC_jsH9J5Vebs_CTgyWo35S-QR2uYKkC-xhimqPbcRaA)**
 **![](https://lh4.googleusercontent.com/sLN_Ser1vGWtkdYpjO3JZ7S2bypk7qO3hM8VuhBZJU8A89r7YiDeakYHmDvWchwyE1kQwaI0s_aHLCtUvH0PTQT_tLhjXPHIkWxBQl9slKz8NDqDTlZ068Nk9Fnm28Iov0YpSWua-2iPqSiKjKaDtmTHZJ56oiFVVZymJGxBjTsveAabDP_sLEjDTfKsUw)**

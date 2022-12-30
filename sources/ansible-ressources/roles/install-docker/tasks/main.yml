@@ -69,11 +69,11 @@
     append: yes
   when: ansible_distribution == "Amazon"
 
-- name: Start and enable the Docker daemon
-  service: 
-    name: docker 
-    state: started 
-    enabled: yes
+#- name: Start and enable the Docker daemon
+ # service: 
+  #  name: docker 
+   # state: started 
+    #enabled: yes
 
 - name: Install docker-compose
   get_url:

@@ -1,8 +1,8 @@
 ---
-- name: Update System
-  yum:
-    name: "*"
-    state: latest
+#- name: Update System
+ # yum:
+  #  name: "*"
+   # state: latest
 
 - name: Install prerequisites
   yum:

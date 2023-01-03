@@ -12,8 +12,9 @@
     - yum-utils
     - device-mapper-persistent-data
     - lvm2
-    #- python3
-    #- python3-pip
+    - python3
+    - python3-pip
+    - python
   when: ansible_distribution == "CentOS"
 
 - name: Install pre-requisite packages
@@ -24,41 +25,42 @@
     - yum-utils
     - device-mapper-persistent-data
     - lvm2
-    #- python3
-    
-- name: download pip script
+    - python3
+    - python
+
+- name: download pip script 2
   get_url:
     url: https://bootstrap.pypa.io/pip/2.7/get-pip.py
     dest: /tmp/get-pip.py
 
-- name: install python-pip
+- name: install python-pip 2
   command: python2.7 /tmp/get-pip.py
 
-- name: Install docker python
+- name: Install docker python 2
   pip: name=docker-py
   
-#- name: download pip script
- # get_url:
-  #  url: https://bootstrap.pypa.io/pip/3.6/get-pip.py
-   # dest: /tmp/get-pip.py
-#- name: install python-pip
- # command: python3 /tmp/get-pip.py
-  #ignore_errors: yes
-#- name: Install docker python
- # pip:
-  #  name: docker-py
-   # executable: /usr/local/bin/pip3
-- name: Add Docker ce repo
+- name: download pip script
   get_url:
-    url: https://download.docker.com/linux/centos/docker-ce.repo
-    dest: /etc/yum.repos.d/docker-ce.repo
-  when: ansible_distribution == "CentOS"
+    url: https://bootstrap.pypa.io/pip/3.6/get-pip.py
+    dest: /tmp/get-pip.py
+- name: install python-pip
+  command: python3 /tmp/get-pip.py
+  ignore_errors: yes
+- name: Install docker python
+  pip:
+    name: docker-py
+    executable: /usr/local/bin/pip3
+#- name: Add Docker ce repo
+ # get_url:
+  #  url: https://download.docker.com/linux/centos/docker-ce.repo
+   # dest: /etc/yum.repos.d/docker-ce.repo
+  #when: ansible_distribution == "CentOS"
 
-- name: "Install Docker on centos"
-  yum: 
-    name: docker 
-    state: present
-  when: ansible_distribution == "CentOS"
+#- name: "Install Docker on centos"
+ # yum: 
+  #  name: docker 
+   # state: present
+  #when: ansible_distribution == "CentOS"
 
 - name: "Install Docker on Amazon Linux"
   command: amazon-linux-extras install docker -y

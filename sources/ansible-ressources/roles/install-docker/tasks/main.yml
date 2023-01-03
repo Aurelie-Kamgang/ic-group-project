@@ -68,12 +68,12 @@
     creates: /usr/bin/docker
   when: ansible_distribution == "Amazon"
 
-- name: Add remote user to docker group
-  user:
-    name: "{{ ansible_user }}"
-    groups: dockerroot
-    append: yes
-  when: ansible_distribution == "CentOS"    
+#- name: Add remote user to docker group
+ # user:
+  #  name: "{{ ansible_user }}"
+   # groups: dockerroot
+    #append: yes
+  #when: ansible_distribution == "CentOS"    
 
 - name: Add remote user to docker group on EC2
   user:

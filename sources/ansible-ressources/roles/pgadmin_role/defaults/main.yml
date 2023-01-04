@@ -2,7 +2,7 @@
 # defaults file for pgadmin_role
 pgadmin_data_volume: pgadmin_data
 pgadmin_network: ic_network_pgadmin
-pg_admin_email: odoo@eazytraining.fr
+pg_admin_email: nkblondelle@gmail.com
 pg_admin_password: odoo_pgadmin_password
 pgadmin_service_name: pgadmin
 pgadmin_container_name: pgadmin

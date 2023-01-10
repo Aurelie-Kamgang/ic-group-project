@@ -129,7 +129,7 @@ pipeline {
             VAULT_KEY = credentials('vault_key')
             PRIVATE_KEY = credentials('private_key')
             PUBLIC_KEY = credentials('public_key')
-            VAGRANT_PASSWORD = credentials('vagrant_password')
+            //VAGRANT_PASSWORD = credentials('vagrant_password')
           }          
           steps {
              script {
@@ -143,7 +143,7 @@ pipeline {
                   chmod 400 id_rsa vault.key
                   #echo "Generating public key"
                   #echo -e $PUBLIC_KEY > id_rsa.pub
-                  #echo -e $VAGRANT_PASSWORD > password
+                  //echo -e $VAGRANT_PASSWORD > password
                   echo "Generating host_vars for EC2 servers"
                   echo "ansible_host: $(awk '{print $2}' /var/jenkins_home/workspace/ic-webapp/public_ip.txt)" > sources/ansible-ressources/host_vars/odoo_server_dev.yml
                   echo "ansible_host: $(awk '{print $2}' /var/jenkins_home/workspace/ic-webapp/public_ip.txt)" > sources/ansible-ressources/host_vars/ic_webapp_server_dev.yml

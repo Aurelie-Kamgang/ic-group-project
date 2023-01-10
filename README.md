@@ -123,7 +123,7 @@ In addition to the parameters and tokens used in the CI part, we will also need 
 The pipeline uses a shared library named [Share-Library ](https://github.com/Aurelie-Kamgang/Share-Library.git).
 
 ##### Slack
-- Channel to use: **Channel**: #test_notif_jenkins
+- Channel to use: **Channel**: #jenkins-notification-ibaas
 - Team subdomain: **pozosworkspace**
 
 ##### Application ports configured

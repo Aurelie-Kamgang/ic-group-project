@@ -85,7 +85,7 @@ pipeline {
         
         
       //}
-    } 
+    //} 
 
     /*
         stage ('Build EC2 on AWS with terraform') {
@@ -330,7 +330,7 @@ pipeline {
                 }
             }
         } 
-   // }  
+    }  
 
 
     

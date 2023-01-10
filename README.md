@@ -1,4 +1,5 @@
 
+
 ## Steps to follow
 This short tutorial explains step by step how to implement the red thread project
 
@@ -72,3 +73,60 @@ Pipelne:
 #### Lauch the pipeline
 **![](https://lh4.googleusercontent.com/96xi-ZxPFgrTSPJcNOMFVgNx238fKf6BBjM40ttYxrJEgzce_tPfTYu2_N3fZoyUd4xz5oPbOpzq4-FEEmE8LEWXYFKk4VmX-HV0ayhcak_s6Axxqa1GMmS_yq4oqvQFaMEywh3kEDUby3Avs5avaExdhe4nZAkIaXc84PXXG9wA0yRPIvCWVdTF73xpMA)**
 **![](https://lh4.googleusercontent.com/tpMVgyinE0QRKPL9o3AjDnfTPLrwObzVMuHUDRjoOCzJElBKFNTHb_qiwiVISpvuh6-mMsqvVbYhj_PfW7vvW7nmUW4J2xNv6Pix0GHAzih4lkk8j9ESc45z7oiGjg6i4g61wVTt7IOjA5kZ_wHxCgKv0B-wam1DALQhGqCzwKuKbIjgkluUZTFTWvn1dQ)**
+
+
+### CD with Jenkins and Ansible
+#### Manual test of ansible playbook (Install ansible on the test server)
+First, we will test the deployment via ansible manually, without Jenkins.
+This will allow us to visualize what should be embedded in the Jenkinsfile
+
+The deployment will be done with the following commands from the Jenkins server: 
+
+>             ansible-playbook -i hosts.yml playbooks/install-docker.yml -l prod 
+**![](https://lh4.googleusercontent.com/7EEyI7ZYA62NaOAfYpJ63CwrPR91GexRa1QFEE1VHa0_MK2MHlnekaEuDuOL3u9len2YvPiLRQfl2IRciWDnktE5_AuKfH3BP2zMxwPycH2u-UpvJwB8VAO1UcEYXPH3Lq8A66V1oTaABDeBv1mvpJucyAkEVaxY02h8a40tjd-dMffgFYGxVqkHdINjuA)**
+**![](https://lh3.googleusercontent.com/MNIDD7_fKxhppk9HPDpAt5ZnD8LvYKtIqhbvUURAKylgyjOZGTAsZQBlq7rY_q3AtToAVdvr82UGiSFCp3bEt2iWeEmtTX8GwTvunYDfg_MyMgafWq8Tx_3LLwa2RZaZZyt-dtJw3yT932SwZFjm5AZiacEGsrwpDbdgHl1zIlIuMJdqC-UoVRtLSqlddA)**
+**![](https://lh4.googleusercontent.com/xJVSHF5DJcPobhBj2q8jid0XLQoNjq-PCus1ue1nFvFPZcF4_VeRgInvR6ACh-48bGv54c0MX48wZNKWgTx3bSJz4kjLf3SqoP7CLeU-e421zk1igaomBiHEp1sf0L1TWjAmcrlqYxRZl6mr7MYlkHLz-B3BAo3RHJRtEuzPSfkqIgE_bulR27XnQasSkw)**
+>             ansible-playbook -i hosts.yml playbooks/deploy-odoo.yml -l odoo
+
+**![](https://lh4.googleusercontent.com/iR8uxtlHn4jLEhZKU536zZYBO0mRxtGO1SI2eHHdupB0P-huMb3UNU3IXmBnTuruxHDM7oxQ0TGq9sirQo0s5N6S-WPacqLGS5uKRnI3RAz7pDmU_7oAfoch9Y_S60JazoaJei5wsf0pZ9_J-qG0buqzTHo7e4lJh-QC2RSDZRvqU-XHZADvQt1n048WaQ)**
+
+>             ansible-playbook -i hosts.yml playbooks/deploy-pgadmin.yml -l pg_admin
+**![](https://lh3.googleusercontent.com/k5qq8t_SXx6KOtZqzZcuRWryNFcjp3HV4ThH8tx9IoB3aQuQumh0DxV7et_6yvxauOlAUGiX49mqA11iBp2OsJ4cPl1M8grtm_ouoLyN5BH8tTpKEh1BP2NGC3mIG2twISI_6NAqJGDQGTpXvIHHiotMKG01b20iicEjLhyD747KZAnFQobELvGnuAomJA)**
+
+>             ansible-playbook -i hosts.yml playbooks/deploy-ic-webapp.yml -l ic_webapp
+
+**![](https://lh6.googleusercontent.com/tOtLil918JqIjFteW6yZeldRBCHCr6ZH4OU_k_pqN6d70E3lnAdNipR3855WokeIu6xdHA49HyOyonKZdRhsF2RyDlUoKaoeK70g64b_yOyZ50o2gxUdbfMZpIFuTwy22oVF4qcd4lh8a-vIxlRyEEpgYlD8p_lTqzJuapbwfeYBtV5Jn69jwhNBdqJVWA)**
+
+Once finished, you must test the functional on the browser:
+
+**![](https://lh6.googleusercontent.com/wA-8HFr1ik-A-L4y_WfQ8DeGReCIiAbjLPnvokO3ooD4xIc00n1CJgT171E1d3VuAtb3qGMNVbK37BZxTh5GRI-yT2nQ3K6bUBbiHmdQ2Lyk6fqaGS3EUKIhGueWq8BGPe4AxqPc94yXjJb7cb2Ds_OzmJ0en2M1QiUjBOOjb30XydZ52HjjP18pvAuoKg)**
+
+**![](https://lh6.googleusercontent.com/hh2JK28dfVoxXWXoWPTa2Gg8P5IQZdKpicp9gcpsof-K7Mg9QtuWfdSx8vGGb_3U37obX1lE8TDbIC3ZvRFnaK4Fp-x1FoQNcy0_lueF5rBllfxmizMieUigqHtKA-qqSAuyP9Xu4K_F6lBH_oORUeGB8qdoP4jTOQ3T8Ijy7-TxDbM5HpbC3rEeUb23yw)**
+**![](https://lh3.googleusercontent.com/W6mT_Fx1myXJMy3an8i1ZDo0GGYk817gHwk6l9-VHp1qjo5hN-lSbOj9s4S369Va_k10gm2Iu7msCAXjE9Tpznw432H5ARv8_CCyLfM7UDOztcDpaYwJcsqzRuD6vr0HFIED2T9mK7D7r5mK7V-1HjZ4tydgcdJ-l7LplLGOYGnO6AIdAlTg4ssZGJFmcw)**
+
+**![](https://lh3.googleusercontent.com/W_RkH5waWUN5Q9XQCjw0-QbwkZtMt75OmLTFyn7ODgOiwi9b9TU8Yh7uJziho9pwA1FMtsU5yS1qYaFwNn8NSuo6QpVlwDZ2CPmEzhdShJiLdqfTKy36m9A7aTuDTRSvnyzl8m7EAMovra3-e6bTK-EqRzmE_e1w59T7_Ha55JbtpaQXCcVRhjsnXZzOSg)**
+
+#### Jenkinsfile configuration to integrate Ansible deployment
+
+##### Secret and parameters
+In addition to the parameters and tokens used in the CI part, we will also need the following parameters: 
+
+|                      |Type              |Default Value    |Description                   |
+|----------------------|------------------|-----------------|------------------------------|
+|     vault_key        | secret text      |      N/A        |  Password vault ansible   |
+|    private_key       | secret file      |      N/A        |   User's private ssh keys|
+|    public_key        | secret file      |      N/A        |   User's public ssh keys  |
+|       slack          | secret text      |      N/A        |   Token channel slack        |
+
+
+##### Shared Library
+The pipeline uses a shared library named [Share-Library ](https://github.com/Aurelie-Kamgang/Share-Library.git).
+
+##### Slack
+- Channel to use: **Channel**: #test_notif_jenkins
+- Team subdomain: **pozosworkspace**
+
+##### Application ports configured
+- ic-webapp : 8000
+- odoo : 8069
+- pgadmin : 5050

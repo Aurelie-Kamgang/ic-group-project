@@ -183,7 +183,7 @@ pipeline {
                             script {
                                 sh '''
                                     export ANSIBLE_CONFIG=$(pwd)/sources/ansible-ressources/ansible.cfg
-                                    ansible-playbook sources/ansible-ressources/playbooks/deploy-ic-webapp.yml --vault-password-file vault.key --private-key id_rsa -l ic_webapp --extra-vars "ansible_sudo_pass=admin" -e 'ansible_python_interpreter=/usr/bin/python'
+                                    ansible-playbook sources/ansible-ressources/playbooks/deploy-ic-webapp.yml --vault-password-file vault.key --private-key id_rsa -l ic_webapp --extra-vars "ansible_sudo_pass=admin" -e 'ansible_python_interpreter=/usr/bin/python2'
                                 '''
                             }
                         }

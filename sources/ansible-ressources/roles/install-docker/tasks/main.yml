@@ -56,11 +56,11 @@
    # dest: /etc/yum.repos.d/docker-ce.repo
   #when: ansible_distribution == "CentOS"
 
-#- name: "Install Docker on centos"
- # yum: 
-  #  name: docker 
-   # state: present
-  #when: ansible_distribution == "CentOS"
+- name: "Install Docker on centos"
+  yum: 
+    name: docker 
+    state: present
+  when: ansible_distribution == "CentOS"
 
 - name: "Install Docker on Amazon Linux"
   command: amazon-linux-extras install docker -y

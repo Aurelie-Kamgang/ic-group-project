@@ -9,5 +9,5 @@ odoo_url: "http://{{ host_odoo_ip }}:8069"
 pgadmin_url: "http://{{ host_pgadmin_ip }}:5050"
 ic_webapp_network: ic_network_webapp
 host_pgadmin_ip: "10.0.4.4"
-host_odoo_ip: "10.0.4.3"
+host_odoo_ip: "10.0.4.6"
 docker_id : blondel
